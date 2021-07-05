@@ -1,6 +1,6 @@
 package com.example.GUI;
 
-import com.example.controller.OpenOWL;
+import com.example.Conexion.OpenOWL;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 
@@ -50,29 +50,27 @@ public class FormPizza extends JDialog {
     private void onOK() {
         try {
             String queryString;
-            queryString = "PREFIX pz:<http://www.semanticweb.org/paul/ontologies/2021/5/mypizza#> "
-                    + "SELECT  (str(?x) as ?Pizza) "
-                    + "where { ?y pz:desc ?x. }";
+            queryString = "PREFIX pizza:<http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#>"
+                    + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                    + "PREFIX owl: <http://www.w3.org/2002/07/owl#>"
+                    + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+                    + "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>"
+                    + "SELECT DISTINCT ?s "
+                    + "WHERE {  ?s rdfs:subClassOf ?restriction . " +
+                    " ?restriction owl:onProperty pizza:hasSpiciness . " +
+                    " ?restriction owl:hasValue pizza:Hot .}";
 
-            ResultSet results = OpenOWL.ExecSparQl(queryString); //all method ExecSparQl from OpenOWL class
+            ResultSet results = OpenOWL.ExecSparQl(queryString);
+//            String results = OpenOWL.ExecSparQlString(queryString);
             while (results.hasNext()) {
                 QuerySolution soln = results.nextSolution();
-                String NameOfPerson = soln.getLiteral("Pizza").getString();
-                System.out.println(NameOfPerson.toString());
-                ListPizzas.add(NameOfPerson.toString());
-
-//                RDFNode x = soln.get("Propertyval");
-//                String xx = String.valueOf(x);
-//                java.nio.ByteBuffer xxx = Charset.forName("UTF-8").encode(xx);
-//                String xs = xxx.toString();
-//                System.out.println(xs);
+                String NameOfPerson = soln.getResource("s").getLocalName();
+//                 Literal NameOfPerson = soln.getLiteral("Pizza");
+                if (NameOfPerson != null){
+                    System.out.println(NameOfPerson);
+                    ListPizzas.add(NameOfPerson.toString());
+                }
             }
-//            ComboBoxModel
-//            PizzaDescList.removeAllItems(); //  combobox nameList
-//            for (int i = 0; i < ListPizzas.size(); i++) {
-//
-//                PizzaDescList.addItem(ListPizzas.get(i));
-//            }
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("entra");

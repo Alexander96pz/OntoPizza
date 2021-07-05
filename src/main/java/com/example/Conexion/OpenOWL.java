@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.Conexion;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
@@ -20,10 +20,7 @@ public class OpenOWL {
 
         OntModel mode = null;
         mode = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_RULE_INF );
-//        InputStream in = FileManager.get().open("C:\\Users\\user\\Documents\\NetBeansProjects\\JenaAPIoNTOLOGY\\src\\jenaapi\\obesitymanagement.owl");  //MyFile
-//        InputStream in = FileManager.get().open("src/main/resources/data/PizzaDesing.owl");
-        InputStream in = FileManager.get().open("src/main/resources/data/myPizza.owl");
-        //test
+        InputStream in = FileManager.get().open("src/main/resources/data/PizzaDesing.owl");
         if (in == null) {
             throw new IllegalArgumentException("Sin base de conocimientos para conectarse");  //no hay archivo para conectar
         }
@@ -43,7 +40,7 @@ public class OpenOWL {
     }
     // String return (convert jena.query.ResultSet  to String)
     // Conectado al archivo OWL y devuelve la cadena
-    static  String ExecSparQlString(String Query){
+    public static String ExecSparQlString(String Query){
         try {
             Query query = QueryFactory.create(Query);
             QueryExecution qe = QueryExecutionFactory.create(query, OpenConnectOWL());
@@ -58,7 +55,7 @@ public class OpenOWL {
             }
             // not okay
             else{
-                s = "rien";
+                s = "no bien";
             }
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(OpenOWL.class.getName()).log(Level.SEVERE, null, ex);
