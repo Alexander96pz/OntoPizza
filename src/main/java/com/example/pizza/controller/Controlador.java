@@ -1,7 +1,5 @@
-package com.example.controller;
+package com.example.pizza.controller;
 
-import com.example.Interfaz.ServicioPizza;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,10 +9,10 @@ import java.util.List;
 @RestController
 public class Controlador {
     List<String> lista= new ArrayList<>();
-    @Autowired
-    private ServicioPizza objServicio;
+//    @Autowired
+//    private ServicioPizza objServicio;
 
-    @GetMapping(value="/listar")
+    @GetMapping("/example")
     public String listar(){
 //        ServicioPizza objServicioPizza = new PizzaService();
 //        lista=objServicioPizza.listar();

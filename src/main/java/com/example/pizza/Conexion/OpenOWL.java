@@ -1,4 +1,4 @@
-package com.example.Conexion;
+package com.example.pizza.Conexion;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
