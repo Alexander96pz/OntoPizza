@@ -12,7 +12,7 @@ public class PizzaService implements ServicioPizza{
     public List<String> ListPizzas = new ArrayList<>();
 
     @Override
-    public List<String> listar() {
+    public List<String> listar(String nivel) {
         try {
             String queryString;
             queryString = "PREFIX pizza:<http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#>"
@@ -23,7 +23,7 @@ public class PizzaService implements ServicioPizza{
                     + "SELECT DISTINCT ?s "
                     + "WHERE {  ?s rdfs:subClassOf ?restriction . " +
                     " ?restriction owl:onProperty pizza:hasSpiciness . " +
-                    " ?restriction owl:hasValue pizza:Hot .}";
+                    " ?restriction owl:hasValue pizza:"+nivel +".}";
 
             ResultSet results = OpenOWL.ExecSparQl(queryString);
 //            String results = OpenOWL.ExecSparQlString(queryString);
