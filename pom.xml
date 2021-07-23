@@ -49,5 +49,10 @@
 			</plugin>
 		</plugins>
 	</build>
-
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>ontotex-public</id>-->
+<!--			<url>http://maven.ontotext.com/content/groups/all-onto</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 </project>
