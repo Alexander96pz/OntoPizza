@@ -1,6 +1,7 @@
-# Getting Started
+# API Ontology Pizza
 
-### Reference Documentation
+
+### Reference Documentation Spring Boot
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -15,3 +16,23 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
+### BD Fuseki
+Descarga el .zip de Apache Jena Fuseki
+* [Link download](https://jena.apache.org/download/)
+
+Install
+Sugerencia: Descomprimir el archivo en el disco :/C
+
+Dentro de la carpeta descomprimida ejecuta Apache Fuseki
+```
+fuseki-server --update --mem /ds
+```
+/ds sera el nombre de la base
+
+Cargo la Ontologia OWL en la seccion de Upload files
+    ![img.png](img.png)
+
+Cabe recalcar que la variable serverUri es igual a
+```
+String serviceUri="http://localhost:3030/ds";
+```
