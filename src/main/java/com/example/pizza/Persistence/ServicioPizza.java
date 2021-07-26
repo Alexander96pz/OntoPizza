@@ -5,4 +5,6 @@ import java.util.List;
 public interface ServicioPizza {
     List<String> listarFuseki(String nivel);
     List<String> allPizzaNamed();
+    List<String> ListarIngredientes();
+    List<String> IndividuosPizza();
 }

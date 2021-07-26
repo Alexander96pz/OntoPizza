@@ -1,5 +1,6 @@
 # API Ontology Pizza
 
+Esta API se encargara de captar los parametros (tokens) y de formular las querys para enviar a DB Fuseki
 
 ### Reference Documentation Spring Boot
 For further reference, please consider the following sections:

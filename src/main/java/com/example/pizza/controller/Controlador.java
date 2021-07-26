@@ -21,6 +21,11 @@ public class Controlador {
     }
     @GetMapping("/allPizzasNamed")
     public List<String> listarPizzaNamed(){
+        lista=ServicioPizza.allPizzaNamed();
+        return lista;
+    }
+    @GetMapping("/getIngredientes")
+    public List<String> listarIngredientes(){
         return lista;
     }
 }
