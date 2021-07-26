@@ -220,6 +220,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#AltaCaloriaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#AltaCaloriaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Pizza altos en calorias</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#AmericanaHotPizza -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#AmericanaHotPizza">
@@ -246,6 +274,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasTopping"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozzarella, Tomato, Jalapeno, and Pepperoni toppings</rdfs:comment>
@@ -275,6 +309,12 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#TomatoTopping"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">490</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozzarella, Tomato and Pepperoni toppings</rdfs:comment>
     </owl:Class>
     
@@ -288,6 +328,53 @@
     
 
 
+    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#BajoCaloriaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#BajoCaloriaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Pizzas bajo en calorias</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#BlobPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#BlobPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#MeatTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Cualquier Pizza que contenga Carne</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#CaperTopping -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#CaperTopping">
@@ -296,6 +383,32 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasSpiciness"/>
                 <owl:hasValue rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#CarnePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#CarnePizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#HamTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">650</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -412,33 +525,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#HighCaloriePizza -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#HighCaloriePizza">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Pizza"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
-                        <owl:someValuesFrom>
-                            <rdfs:Datatype>
-                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                                <owl:withRestrictions rdf:parseType="Collection">
-                                    <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:minInclusive>
-                                    </rdf:Description>
-                                </owl:withRestrictions>
-                            </rdfs:Datatype>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#HotVeggiePizza -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#HotVeggiePizza">
@@ -458,6 +544,12 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -495,33 +587,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#LowCaloriePizza -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#LowCaloriePizza">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#Pizza"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
-                        <owl:someValuesFrom>
-                            <rdfs:Datatype>
-                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                                <owl:withRestrictions rdf:parseType="Collection">
-                                    <rdf:Description>
-                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:maxExclusive>
-                                    </rdf:Description>
-                                </owl:withRestrictions>
-                            </rdfs:Datatype>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#MargheritaPizza -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#MargheritaPizza">
@@ -549,6 +614,12 @@
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozzarella and Tomato toppings</rdfs:comment>
@@ -588,6 +659,12 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -795,6 +872,12 @@
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marlonl/ontologies/2021/PizzaTutorial#hasCaloricContent"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A pizza that  has Mozzarella, Olives, Parmesan, and Tomato toppings</rdfs:comment>
